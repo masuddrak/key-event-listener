@@ -1,21 +1,18 @@
-document.getElementById('secontItem').addEventListener('click',function(event){
-    console.log('second1 item clicked')
-    event.stopImmediatePropagation()
+const items=document.getElementsByClassName('item');
+for(const item of items){
+    item.addEventListener('click',function(event){
+        // document.getElementById('listContainer').removeChild(item)
+        event.target.parentNode.removeChild(event.target)
+    })
+}
+// create item
+document.getElementById('addItem').addEventListener('click',function(){
+    const li=document.createElement('li');
+    li.innerText='new item';
+    // li.classList.add('item');
+    const parent=document.getElementById('listContainer');
+    parent.appendChild(li);
 })
-document.getElementById('secontItem').addEventListener('click',function(event){
-    console.log('second2 item clicked')
-})
-document.getElementById('secontItem').addEventListener('click',function(event){
-    console.log('second3 item clicked')
-})
-document.getElementById('secontItem').addEventListener('click',function(event){
-    console.log('second4 item clicked')
-})
-// click listContainer
-document.getElementById('listContainer').addEventListener('click',function(){
-    console.log('listContainer')
-})
-// click sectionContainer
-document.getElementById('sectionContainer').addEventListener('click',function(){
-    console.log('sectionContainer')
+document.getElementById('listContainer').addEventListener('click',function(event){
+    event.target.parentNode.removeChild(event.target)
 })
