@@ -1,37 +1,21 @@
-
-document.getElementById('secretBtn').addEventListener('click',function(){
-    document.getElementById('secretInfo').style.display='none'
-});
-// focus
-document.getElementById('deleteConfram').addEventListener('focus',function(){
-    document.body.style.backgroundColor='green'
-});
-// blur
-document.getElementById('deleteConfram').addEventListener('blur',function(){
-    document.body.style.backgroundColor='white';
-});
-// keydown
-// document.getElementById('deleteConfram').addEventListener('keydown',function(){
-//     const deletFile=document.getElementById('deleteConfram');
-//     console.log(deletFile.value)
-// })
-// keypress
-// document.getElementById('deleteConfram').addEventListener('keypress',function(){
-//     const deletFile=document.getElementById('deleteConfram');
-//     console.log(deletFile.value)
-// })
-// keyup
-document.getElementById('deleteConfram').addEventListener('keyup',function(event){
-   const secretBtn= document.getElementById('secretBtn')
-    if(event.target.value=='Delet'){
-        secretBtn.removeAttribute('disabled');
-    }
-   else{
-        secretBtn.setAttribute('disabled', true);
-    }
+document.getElementById('secontItem').addEventListener('click',function(event){
+    console.log('second1 item clicked')
+    event.stopImmediatePropagation()
 })
-// change
-// document.getElementById('deleteConfram').addEventListener('change',function(){
-//     const deletFile=document.getElementById('deleteConfram');
-//     console.log(deletFile.value)
-// })
+document.getElementById('secontItem').addEventListener('click',function(event){
+    console.log('second2 item clicked')
+})
+document.getElementById('secontItem').addEventListener('click',function(event){
+    console.log('second3 item clicked')
+})
+document.getElementById('secontItem').addEventListener('click',function(event){
+    console.log('second4 item clicked')
+})
+// click listContainer
+document.getElementById('listContainer').addEventListener('click',function(){
+    console.log('listContainer')
+})
+// click sectionContainer
+document.getElementById('sectionContainer').addEventListener('click',function(){
+    console.log('sectionContainer')
+})
